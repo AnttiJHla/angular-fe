@@ -1,0 +1,11 @@
+<h2>Servers</h2>
+<ul class="servers">
+  <li *ngFor="let server of servers" 
+  (click)="onSelect(server)"
+  [class.selected]="server === selectedServer"
+  >
+        <span class="badge">{{server.id}}</span> {{server.name}}
+  </li>
+</ul>
+
+<app-server-detail [server]="selectedServer"></app-server-detail>
