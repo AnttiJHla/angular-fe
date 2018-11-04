@@ -21,7 +21,9 @@ export class ServersComponent implements OnInit {
   onSelect(server: Server): void {
     this.selectedServer = server;
   }
+
   getServers(): void {
-    this.servers = this.serverService.getServers();
+    this.serverService.getServers()
+        .subscribe(servers => this.servers = servers);
   }
 }
